@@ -3,8 +3,15 @@ import "./src/styles/generic/reset.css";
 import "./src/styles/elements/base.css";
 import CardGame from "./src/components/CardGame";
 import BoardGame from "./src/objects/BoardGame";
+import PlayerName from "./src/components/PlayerName";
 
 const $root = document.querySelector('#root');
-const $htmlCardGame = BoardGame(6);
 
-$root.insertAdjacentHTML("beforeend", $htmlCardGame);
+$root.insertAdjacentHTML(
+    "beforeend",
+    `
+        ${PlayerName("Player1")}
+        ${PlayerName("Player2")}
+        ${BoardGame(6)}
+    `
+);
